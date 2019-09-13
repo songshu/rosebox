@@ -1,0 +1,249 @@
+@import url('http://fonts.googleapis.com/css?family=Nunito');
+body {
+    background: #CECECE !important;
+    overflow:hidden;
+}
+
+.world {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    -webkit-perspective : 1000px;
+    -moz-perspective    : 1000px;
+    perspective         : 1000px;
+    text-align: center;
+}
+
+.world h1 {
+    font-family: 'Nunito', sans-serif;
+    width: 100%;
+    font-size: 100px;
+    margin: 20px auto;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0px 1px 1px #ddd,
+    0px 2px 1px #d6d6d6,
+    0px 3px 1px #ccc,
+    0px 4px 1px #c5c5c5,
+    0px 5px 1px #c1c1c1,
+    0px 6px 1px #bbb,
+    0px 7px 1px #777;
+}
+
+.world input[type=text] {
+    width:300px;
+    height: 32px;
+}
+
+.world button {
+    height:28px;
+}
+
+.world form {
+    white-space: nowrap;
+}
+
+
+.cube {
+    /* width: 100%;
+    height: 100%; */
+    left: 200px;
+    top:50px;
+    position: absolute;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+
+    -webkit-transition: all 2s;
+    -moz-transition: all 2s;
+    -o-transition: all 2s;
+    transition: all 2s;
+
+    -webkit-transform: translateZ( 0px );
+    -moz-transform: translateZ( 0px );
+    -o-transform: translateZ( 0px );
+    transform: translateZ( 0px );
+
+
+    -webkit-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -o-transform-origin: 0 0;
+    transform-origin: 0 0;
+}
+
+.cube figure {
+    margin: 0;
+    width: 200px;
+    height: 200px;
+    display: block;
+    position: absolute;
+    border: 2px solid #656565;
+    text-align:center;
+}
+
+.cube.selected figure {
+    border:2px solid #ff002a;
+}
+
+.cube figure .pcontent {
+    position:relative;
+    width:100%;
+    height:100%;
+    overflow: hidden;
+}
+
+
+.cube.backsides_invisible figure {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+
+.cube .front, .cube .back, .cube .right, .cube .left, .cube .top, .cube .bottom {
+    /* OPACITY FOR BACKSIDES.
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    filter: alpha(opacity=70);
+    -moz-opacity: 0.7;
+    -khtml-opacity: 0.7;
+    opacity: 0.7; */
+
+    /* -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px; */
+    border: 3px solid #696;
+}
+
+.cube .front  {
+    -webkit-box-shadow: #666 0px 2px 3px;
+    -moz-box-shadow: #666 0px 2px 3px;
+    box-shadow: #666 0px 2px 3px;
+    background: #EEFF99;
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#EEFF99), to(#66EE33));
+    background: -webkit-linear-gradient(#EEFF99, #66EE33);
+    background: -moz-linear-gradient(#EEFF99, #66EE33);
+    background: -ms-linear-gradient(#EEFF99, #66EE33);
+    background: -o-linear-gradient(#EEFF99, #66EE33);
+    background: linear-gradient(#EEFF99, #66EE33);
+    box-shadow: #666 0px 2px 3px;
+}
+
+.cube .back   {
+    -webkit-box-shadow: #666 0px 2px 3px;
+    -moz-box-shadow: #666 0px 2px 3px;
+    box-shadow: #666 0px 2px 3px;
+    background: #AE99FF;
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#AE99FF), to(#D5D8EC));
+    background: -webkit-linear-gradient(#AE99FF, #D5D8EC);
+    background: -moz-linear-gradient(#AE99FF, #D5D8EC);
+    background: -ms-linear-gradient(#AE99FF, #D5D8EC);
+    background: -o-linear-gradient(#AE99FF, #D5D8EC);
+    background: linear-gradient(#AE99FF, #D5D8EC);
+}
+.cube .right  {
+    -webkit-box-shadow: #666 0px 2px 3px;
+    -moz-box-shadow: #666 0px 2px 3px;
+    box-shadow: #666 0px 2px 3px;
+    background: #2EFFBA;
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#2EFFBA), to(#A3A9D1));
+    background: -webkit-linear-gradient(#2EFFBA, #A3A9D1);
+    background: -moz-linear-gradient(#2EFFBA, #A3A9D1);
+    background: -ms-linear-gradient(#2EFFBA, #A3A9D1);
+    background: -o-linear-gradient(#2EFFBA, #A3A9D1);
+    background: linear-gradient(#2EFFBA, #A3A9D1);
+}
+
+.cube .left   {
+    -webkit-box-shadow: #666 0px 2px 3px;
+    -moz-box-shadow: #666 0px 2px 3px;
+    box-shadow: #666 0px 2px 3px;
+    background: #FF2E73;
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#FF2E73), to(#8A8FB2));
+    background: -webkit-linear-gradient(#FF2E73, #8A8FB2);
+    background: -moz-linear-gradient(#FF2E73, #8A8FB2);
+    background: -ms-linear-gradient(#FF2E73, #8A8FB2);
+    background: -o-linear-gradient(#FF2E73, #8A8FB2);
+    background: linear-gradient(#FF2E73, #8A8FB2);
+}
+
+.cube .top    {
+    -webkit-box-shadow: #666 0px 2px 3px;
+    -moz-box-shadow: #666 0px 2px 3px;
+    box-shadow: #666 0px 2px 3px;
+    background: #3E2EFF;
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#3E2EFF), to(#B8BACC));
+    background: -webkit-linear-gradient(#3E2EFF, #B8BACC);
+    background: -moz-linear-gradient(#3E2EFF, #B8BACC);
+    background: -ms-linear-gradient(#3E2EFF, #B8BACC);
+    background: -o-linear-gradient(#3E2EFF, #B8BACC);
+    background: linear-gradient(#3E2EFF, #B8BACC);
+}
+.cube .bottom {
+    -webkit-box-shadow: #666 0px 2px 3px;
+    -moz-box-shadow: #666 0px 2px 3px;
+    box-shadow: #666 0px 2px 3px;
+    background: #FFA82E;
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#FFA82E), to(#EDEFFD));
+    background: -webkit-linear-gradient(#FFA82E, #EDEFFD);
+    background: -moz-linear-gradient(#FFA82E, #EDEFFD);
+    background: -ms-linear-gradient(#FFA82E, #EDEFFD);
+    background: -o-linear-gradient(#FFA82E, #EDEFFD);
+    background: linear-gradient(#FFA82E, #EDEFFD);
+}
+
+.cube .front  {
+    -webkit-transform: translateZ( 100px );
+    -moz-transform: translateZ( 100px );
+    -o-transform: translateZ( 100px );
+    transform: translateZ( 100px );
+}
+
+.cube .back   {
+    -webkit-transform: rotateX( -180deg ) translateZ( 100px );
+    -moz-transform: rotateX( -180deg ) translateZ( 100px );
+    -o-transform: rotateX( -180deg ) translateZ( 100px );
+    transform: rotateX( -180deg ) translateZ( 100px );
+}
+
+.cube .right {
+    -webkit-transform: rotateY(   90deg ) translateZ( 100px );
+    -moz-transform: rotateY(   90deg ) translateZ( 100px );
+    -o-transform: rotateY(   90deg ) translateZ( 100px );
+    transform: rotateY(   90deg ) translateZ( 100px );
+}
+
+.cube .left {
+    -webkit-transform: rotateY(  -90deg ) translateZ( 100px );
+    -moz-transform: rotateY(  -90deg ) translateZ( 100px );
+    -o-transform: rotateY(  -90deg ) translateZ( 100px );
+    transform: rotateY(  -90deg ) translateZ( 100px );
+}
+
+.cube .top {
+    -webkit-transform: rotateX(   90deg ) translateZ( 100px );
+    -moz-transform: rotateX(   90deg ) translateZ( 100px );
+    -o-transform: rotateX(   90deg ) translateZ( 100px );
+    transform: rotateX(   90deg ) translateZ( 100px );
+}
+
+.cube .bottom {
+    -webkit-transform: rotateX(  -90deg ) translateZ( 100px );
+    -moz-transform: rotateX(  -90deg ) translateZ( 100px );
+    -o-transform: rotateX(  -90deg ) translateZ( 100px );
+    transform: rotateX(  -90deg ) translateZ( 100px );
+}
+
+.hidden {
+    display:none;
+}
+
+
+/* Cube controls. */
+div.cube_controls {
+    float:right;
+    margin-right:50px;
+}
+
+div.spacer {
+    clear:both;
+    height:5px;
+}
